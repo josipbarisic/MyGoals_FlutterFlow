@@ -54,7 +54,7 @@ class _AddGoalSharingUsersComponentWidgetState
 
     return Container(
       width: double.infinity,
-      height: 330.0,
+      padding: EdgeInsets.only(bottom: 30),
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.only(
@@ -182,6 +182,7 @@ class _AddGoalSharingUsersComponentWidgetState
                       fontSize: 14.0,
                       fontWeight: FontWeight.w500,
                     ),
+                keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.start,
                 validator: _model.goalSharingUserEmailControllerValidator
                     .asValidator(context),

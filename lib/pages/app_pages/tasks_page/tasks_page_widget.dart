@@ -1,3 +1,12 @@
+import 'dart:async';
+
+import 'package:aligned_dialog/aligned_dialog.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
+
 import '/backend/supabase/supabase.dart';
 import '/components/bottom_sheets/create_task_component/create_task_component_widget.dart';
 import '/components/bottom_sheets/update_task_component/update_task_component_widget.dart';
@@ -7,17 +16,8 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:async';
-import 'package:aligned_dialog/aligned_dialog.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'tasks_page_model.dart';
+
 export 'tasks_page_model.dart';
 
 class TasksPageWidget extends StatefulWidget {
@@ -103,7 +103,7 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                   child: Padding(
                     padding: MediaQuery.viewInsetsOf(context),
                     child: Container(
-                      height: 360.0,
+                      height: 370.0,
                       child: CreateTaskComponentWidget(
                         goalId: widget.goalId!,
                       ),
@@ -238,7 +238,8 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                                     context: context,
                                     builder: (context) {
                                       return GestureDetector(
-                                        onTap: () => _model
+                                        onTap: () =>
+                                        _model
                                                 .unfocusNode.canRequestFocus
                                             ? FocusScope.of(context)
                                                 .requestFocus(
@@ -248,7 +249,7 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                                           padding:
                                               MediaQuery.viewInsetsOf(context),
                                           child: Container(
-                                            height: 360.0,
+                                            height: 370,
                                             child: UpdateTaskComponentWidget(
                                               task: listViewTasksRow,
                                             ),

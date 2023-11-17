@@ -1,3 +1,15 @@
+import 'dart:async';
+
+import 'package:aligned_dialog/aligned_dialog.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:lottie/lottie.dart';
+import 'package:percent_indicator/percent_indicator.dart';
+import 'package:provider/provider.dart';
+
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/bottom_sheets/add_goal_sharing_users_component/add_goal_sharing_users_component_widget.dart';
@@ -9,20 +21,8 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:async';
-import 'package:aligned_dialog/aligned_dialog.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
-import 'package:percent_indicator/percent_indicator.dart';
-import 'package:provider/provider.dart';
 import 'home_page_model.dart';
+
 export 'home_page_model.dart';
 
 class HomePageWidget extends StatefulWidget {
@@ -107,7 +107,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
 
     setupAnimations(
       animationsMap.values.where((anim) =>
-          anim.trigger == AnimationTrigger.onActionTrigger ||
+      anim.trigger == AnimationTrigger.onActionTrigger ||
           !anim.applyInitialState),
       this,
     );
@@ -189,15 +189,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                     Expanded(
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                         child: Text(
                           'My Goals',
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                fontFamily: 'Poppins',
-                                fontSize: 24.0,
-                              ),
+                            fontFamily: 'Poppins',
+                            fontSize: 24.0,
+                          ),
                         ),
                       ),
                     ),
@@ -257,21 +257,21 @@ class _HomePageWidgetState extends State<HomePageWidget>
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                  EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       FutureBuilder<List<GoalsRow>>(
                         future: (_model.requestCompleter ??=
-                                Completer<List<GoalsRow>>()
-                                  ..complete(GoalsTable().queryRows(
-                                    queryFn: (q) => q
-                                        .eq(
-                                          'archived',
-                                          FFAppState().filters.archived,
-                                        )
-                                        .order('created_at'),
-                                  )))
+                        Completer<List<GoalsRow>>()
+                          ..complete(GoalsTable().queryRows(
+                            queryFn: (q) => q
+                                .eq(
+                              'archived',
+                              FFAppState().filters.archived,
+                            )
+                                .order('created_at'),
+                          )))
                             .future,
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
@@ -303,7 +303,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             itemCount: listViewGoalsRowList.length,
                             itemBuilder: (context, listViewIndex) {
                               final listViewGoalsRow =
-                                  listViewGoalsRowList[listViewIndex];
+                              listViewGoalsRowList[listViewIndex];
                               return Stack(
                                 children: [
                                   Container(
@@ -349,7 +349,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
                                               duration:
-                                                  Duration(milliseconds: 200),
+                                              Duration(milliseconds: 200),
                                             ),
                                           },
                                         );
@@ -367,7 +367,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                               child: Container(
                                                 height: 380.0,
                                                 child:
-                                                    UpdateGoalComponentWidget(
+                                                UpdateGoalComponentWidget(
                                                   goal: listViewGoalsRow,
                                                 ),
                                               ),
@@ -376,7 +376,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         ).then((value) => safeSetState(() {}));
 
                                         setState(() =>
-                                            _model.requestCompleter = null);
+                                        _model.requestCompleter = null);
                                         await _model.waitForRequestCompleted();
                                       },
                                       child: Container(
@@ -392,7 +392,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             )
                                           ],
                                           borderRadius:
-                                              BorderRadius.circular(16.0),
+                                          BorderRadius.circular(16.0),
                                         ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
@@ -400,47 +400,47 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      16.0, 16.0, 16.0, 0.0),
+                                                  16.0, 16.0, 16.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Expanded(
                                                     child: Column(
                                                       mainAxisSize:
-                                                          MainAxisSize.max,
+                                                      MainAxisSize.max,
                                                       mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .start,
+                                                      MainAxisAlignment
+                                                          .start,
                                                       crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
+                                                      CrossAxisAlignment
+                                                          .start,
                                                       children: [
                                                         Row(
                                                           mainAxisSize:
-                                                              MainAxisSize.max,
+                                                          MainAxisSize.max,
                                                           crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .center,
+                                                          CrossAxisAlignment
+                                                              .center,
                                                           children: [
                                                             Expanded(
                                                               child: Text(
                                                                 listViewGoalsRow
                                                                     .title!,
                                                                 style: FlutterFlowTheme.of(
-                                                                        context)
+                                                                    context)
                                                                     .titleSmall,
                                                               ),
                                                             ),
                                                             FlutterFlowIconButton(
                                                               borderRadius:
-                                                                  20.0,
+                                                              20.0,
                                                               borderWidth: 1.0,
                                                               buttonSize: 40.0,
                                                               icon: FaIcon(
                                                                 FontAwesomeIcons
                                                                     .edit,
                                                                 color: FlutterFlowTheme.of(
-                                                                        context)
+                                                                    context)
                                                                     .primaryText,
                                                                 size: 18.0,
                                                               ),
@@ -448,34 +448,34 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   () async {
                                                                 await showModalBottomSheet(
                                                                   isScrollControlled:
-                                                                      true,
+                                                                  true,
                                                                   backgroundColor:
-                                                                      Colors
-                                                                          .transparent,
+                                                                  Colors
+                                                                      .transparent,
                                                                   enableDrag:
-                                                                      false,
+                                                                  false,
                                                                   context:
-                                                                      context,
+                                                                  context,
                                                                   builder:
                                                                       (context) {
                                                                     return Padding(
                                                                       padding: MediaQuery
                                                                           .viewInsetsOf(
-                                                                              context),
+                                                                          context),
                                                                       child:
-                                                                          UpdateGoalComponentWidget(
+                                                                      UpdateGoalComponentWidget(
                                                                         goal:
-                                                                            listViewGoalsRow,
+                                                                        listViewGoalsRow,
                                                                       ),
                                                                     );
                                                                   },
                                                                 ).then((value) =>
                                                                     safeSetState(
-                                                                        () {}));
+                                                                            () {}));
 
                                                                 setState(() =>
-                                                                    _model.requestCompleter =
-                                                                        null);
+                                                                _model.requestCompleter =
+                                                                null);
                                                                 await _model
                                                                     .waitForRequestCompleted();
                                                               },
@@ -484,27 +484,27 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         ),
                                                         Row(
                                                           mainAxisSize:
-                                                              MainAxisSize.max,
+                                                          MainAxisSize.max,
                                                           mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                           crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .center,
+                                                          CrossAxisAlignment
+                                                              .center,
                                                           children: [
                                                             Expanded(
                                                               child: Text(
                                                                 listViewGoalsRow
                                                                     .description!,
                                                                 style: FlutterFlowTheme.of(
-                                                                        context)
+                                                                    context)
                                                                     .bodySmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
-                                                                      lineHeight:
-                                                                          1.4,
-                                                                    ),
+                                                                  fontFamily:
+                                                                  'Poppins',
+                                                                  lineHeight:
+                                                                  1.4,
+                                                                ),
                                                               ),
                                                             ),
                                                           ],
@@ -518,23 +518,23 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      10.0, 5.0, 10.0, 5.0),
+                                                  10.0, 5.0, 10.0, 5.0),
                                               child: Container(
                                                 decoration: BoxDecoration(),
                                                 child: Stack(
                                                   alignment:
-                                                      AlignmentDirectional(
-                                                          0.0, 0.0),
+                                                  AlignmentDirectional(
+                                                      0.0, 0.0),
                                                   children: [
                                                     LinearPercentIndicator(
                                                       percent: (int
-                                                                  numberOfTasks,
-                                                              int completedTasks) {
+                                                      numberOfTasks,
+                                                          int completedTasks) {
                                                         return numberOfTasks !=
-                                                                0
+                                                            0
                                                             ? (completedTasks /
-                                                                    numberOfTasks) *
-                                                                1.0
+                                                            numberOfTasks) *
+                                                            1.0
                                                             : 0.0;
                                                       }(
                                                           listViewGoalsRow
@@ -544,59 +544,59 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       lineHeight: 5.0,
                                                       animation: true,
                                                       animateFromLastPercent:
-                                                          true,
+                                                      true,
                                                       progressColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
+                                                      FlutterFlowTheme.of(
+                                                          context)
+                                                          .primary,
                                                       backgroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .accent4,
+                                                      FlutterFlowTheme.of(
+                                                          context)
+                                                          .accent4,
                                                       barRadius:
-                                                          Radius.circular(5.0),
+                                                      Radius.circular(5.0),
                                                       padding: EdgeInsets.zero,
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
-                                                              0.00, 0.00),
+                                                      AlignmentDirectional(
+                                                          0.00, 0.00),
                                                       child: Container(
                                                         width: 40.0,
                                                         height: 25.0,
                                                         decoration:
-                                                            BoxDecoration(
+                                                        BoxDecoration(
                                                           color: FlutterFlowTheme
-                                                                  .of(context)
+                                                              .of(context)
                                                               .secondaryBackground,
                                                           borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      16.0),
+                                                          BorderRadius
+                                                              .circular(
+                                                              16.0),
                                                           border: Border.all(
                                                             color: FlutterFlowTheme
-                                                                    .of(context)
+                                                                .of(context)
                                                                 .accent3,
                                                           ),
                                                         ),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
-                                                                  0.00, 0.00),
+                                                          AlignmentDirectional(
+                                                              0.00, 0.00),
                                                           child: Text(
                                                             '${((int numberOfTasks, int completedTasks, bool goalCompleted) {
                                                               return (numberOfTasks !=
-                                                                          0
-                                                                      ? (completedTasks /
-                                                                              numberOfTasks) *
-                                                                          100
-                                                                      : goalCompleted
-                                                                          ? 100
-                                                                          : 0.0)
+                                                                  0
+                                                                  ? (completedTasks /
+                                                                  numberOfTasks) *
+                                                                  100
+                                                                  : goalCompleted
+                                                                  ? 100
+                                                                  : 0.0)
                                                                   .round();
                                                             }(listViewGoalsRow.noTasks, listViewGoalsRow.noTasksComplete, (listViewGoalsRow.status == 'COMPLETED'))).toString()}%',
                                                             style: FlutterFlowTheme
-                                                                    .of(context)
+                                                                .of(context)
                                                                 .bodySmall,
                                                           ),
                                                         ),
@@ -611,24 +611,24 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 4.0, 16.0,
-                                                          16.0),
+                                                      16.0),
                                                   child: Row(
                                                     mainAxisSize:
-                                                        MainAxisSize.max,
+                                                    MainAxisSize.max,
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                            0.0,
+                                                            0.0,
+                                                            5.0,
+                                                            0.0),
                                                         child: FaIcon(
                                                           FontAwesomeIcons
                                                               .tasks,
                                                           color: FlutterFlowTheme
-                                                                  .of(context)
+                                                              .of(context)
                                                               .secondaryText,
                                                           size: 16.0,
                                                         ),
@@ -637,23 +637,23 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         child: Text(
                                                           '${listViewGoalsRow.noTasksComplete.toString()} / ${listViewGoalsRow.noTasks.toString()}',
                                                           style: FlutterFlowTheme
-                                                                  .of(context)
+                                                              .of(context)
                                                               .bodySmall,
                                                         ),
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                            0.0,
+                                                            0.0,
+                                                            5.0,
+                                                            0.0),
                                                         child: FaIcon(
                                                           FontAwesomeIcons
                                                               .calendar,
                                                           color: FlutterFlowTheme
-                                                                  .of(context)
+                                                              .of(context)
                                                               .secondaryText,
                                                           size: 16.0,
                                                         ),
@@ -664,149 +664,141 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                             dateTimeFromSecondsSinceEpoch(
                                                                 valueOrDefault<
                                                                     int>(
-                                                              listViewGoalsRow
-                                                                  .createdAt
-                                                                  ?.secondsSinceEpoch,
-                                                              0,
-                                                            ))),
+                                                                  listViewGoalsRow
+                                                                      .createdAt
+                                                                      ?.secondsSinceEpoch,
+                                                                  0,
+                                                                ))),
                                                         style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodySmall,
+                                                        FlutterFlowTheme.of(
+                                                            context)
+                                                            .bodySmall,
                                                       ),
                                                     ],
                                                   ),
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
-                                                          0.00, 0.00),
+                                                  AlignmentDirectional(
+                                                      0.00, 0.00),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                10.0,
-                                                                10.0,
-                                                                10.0,
-                                                                10.0),
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        10.0,
+                                                        10.0,
+                                                        10.0,
+                                                        10.0),
                                                     child: InkWell(
                                                       splashColor:
-                                                          Colors.transparent,
+                                                      Colors.transparent,
                                                       focusColor:
-                                                          Colors.transparent,
+                                                      Colors.transparent,
                                                       hoverColor:
-                                                          Colors.transparent,
+                                                      Colors.transparent,
                                                       highlightColor:
-                                                          Colors.transparent,
+                                                      Colors.transparent,
                                                       onTap: () async {
                                                         await showModalBottomSheet(
                                                           isScrollControlled:
-                                                              true,
+                                                          true,
                                                           backgroundColor:
-                                                              Colors
-                                                                  .transparent,
-                                                          barrierColor: listViewGoalsRow
-                                                                      .goalSharingUsers
-                                                                      .length >
-                                                                  0
-                                                              ? Color(
-                                                                  0xFF3A7FBF)
-                                                              : Color(
-                                                                  0x00000000),
+                                                          Colors
+                                                              .transparent,
                                                           enableDrag: false,
                                                           context: context,
                                                           builder: (context) {
                                                             return Padding(
                                                               padding: MediaQuery
                                                                   .viewInsetsOf(
-                                                                      context),
+                                                                  context),
                                                               child:
-                                                                  AddGoalSharingUsersComponentWidget(
+                                                              AddGoalSharingUsersComponentWidget(
                                                                 goal:
-                                                                    listViewGoalsRow,
+                                                                listViewGoalsRow,
                                                               ),
                                                             );
                                                           },
-                                                        ).then((value) =>
-                                                            safeSetState(
-                                                                () {}));
+                                                        ).then((value) => safeSetState(() {}));
+                                                        setState(() => _model.requestCompleter = null);
+                                                        await _model.waitForRequestCompleted();
                                                       },
                                                       child: Material(
                                                         color:
-                                                            Colors.transparent,
+                                                        Colors.transparent,
                                                         elevation: 3.0,
                                                         shape:
-                                                            const CircleBorder(),
+                                                        const CircleBorder(),
                                                         child: Container(
                                                           width: 45.0,
                                                           height: 45.0,
                                                           decoration:
-                                                              BoxDecoration(
+                                                          BoxDecoration(
                                                             color: FlutterFlowTheme
-                                                                    .of(context)
+                                                                .of(context)
                                                                 .secondaryBackground,
                                                             boxShadow: [
                                                               BoxShadow(
                                                                 blurRadius: 4.0,
                                                                 color: FlutterFlowTheme.of(
-                                                                        context)
+                                                                    context)
                                                                     .lineColor,
                                                                 offset: Offset(
                                                                     0.0, 2.0),
                                                               )
                                                             ],
                                                             shape:
-                                                                BoxShape.circle,
+                                                            BoxShape.circle,
                                                             border: Border.all(
                                                               color: FlutterFlowTheme
-                                                                      .of(context)
+                                                                  .of(context)
                                                                   .primaryBackground,
                                                             ),
                                                           ),
                                                           alignment:
-                                                              AlignmentDirectional(
-                                                                  0.00, 0.00),
+                                                          AlignmentDirectional(
+                                                              0.00, 0.00),
                                                           child: Align(
                                                             alignment:
-                                                                AlignmentDirectional(
-                                                                    0.00, 0.00),
+                                                            AlignmentDirectional(
+                                                                0.00, 0.00),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          5.0,
-                                                                          5.0,
-                                                                          5.0,
-                                                                          5.0),
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0),
                                                               child: Container(
                                                                 width: 42.0,
                                                                 height: 42.0,
                                                                 clipBehavior: Clip
                                                                     .antiAlias,
                                                                 decoration:
-                                                                    BoxDecoration(
+                                                                BoxDecoration(
                                                                   shape: BoxShape
                                                                       .circle,
                                                                 ),
                                                                 child:
-                                                                    SvgPicture
-                                                                        .asset(
+                                                                SvgPicture
+                                                                    .asset(
                                                                   'assets/images/image2vector.svg',
                                                                   fit: BoxFit
                                                                       .contain,
                                                                   alignment:
-                                                                      Alignment(
-                                                                          0.00,
-                                                                          0.00),
+                                                                  Alignment(
+                                                                      0.00,
+                                                                      0.00),
                                                                 ),
                                                               )
                                                                   .animateOnPageLoad(
-                                                                      animationsMap[
-                                                                          'circleImageOnPageLoadAnimation']!)
+                                                                  animationsMap[
+                                                                  'circleImageOnPageLoadAnimation']!)
                                                                   .animateOnActionTrigger(
-                                                                    animationsMap[
-                                                                        'circleImageOnActionTriggerAnimation']!,
-                                                                  ),
+                                                                animationsMap[
+                                                                'circleImageOnActionTriggerAnimation']!,
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
@@ -820,7 +812,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         ),
                                       ),
                                     ).animateOnPageLoad(animationsMap[
-                                        'containerOnPageLoadAnimation']!),
+                                    'containerOnPageLoadAnimation']!),
                                   ),
                                 ],
                               ).animateOnPageLoad(

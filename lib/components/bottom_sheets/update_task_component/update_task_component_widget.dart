@@ -58,7 +58,6 @@ class _UpdateTaskComponentWidgetState extends State<UpdateTaskComponentWidget> {
 
     return Container(
       width: double.infinity,
-      height: 360.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.only(
