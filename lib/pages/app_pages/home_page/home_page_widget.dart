@@ -1,8 +1,8 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/bottom_sheets/add_goal_sharing_users_component/add_goal_sharing_users_component_widget.dart';
 import '/components/bottom_sheets/create_goal_component/create_goal_component_widget.dart';
 import '/components/bottom_sheets/update_goal_component/update_goal_component_widget.dart';
-import '/components/bottom_sheets/update_goal_sharing_users_component/update_goal_sharing_users_component_widget.dart';
 import '/components/dropdowns/filter_dropdown/filter_dropdown_widget.dart';
 import '/components/placeholders/empty_list_component/empty_list_component_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -721,7 +721,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   .viewInsetsOf(
                                                                       context),
                                                               child:
-                                                                  UpdateGoalSharingUsersComponentWidget(
+                                                                  AddGoalSharingUsersComponentWidget(
                                                                 goal:
                                                                     listViewGoalsRow,
                                                               ),

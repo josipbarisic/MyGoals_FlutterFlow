@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'update_goal_sharing_users_component_model.dart';
-export 'update_goal_sharing_users_component_model.dart';
+import 'add_goal_sharing_users_component_model.dart';
+export 'add_goal_sharing_users_component_model.dart';
 
-class UpdateGoalSharingUsersComponentWidget extends StatefulWidget {
-  const UpdateGoalSharingUsersComponentWidget({
+class AddGoalSharingUsersComponentWidget extends StatefulWidget {
+  const AddGoalSharingUsersComponentWidget({
     Key? key,
     required this.goal,
   }) : super(key: key);
@@ -18,13 +18,13 @@ class UpdateGoalSharingUsersComponentWidget extends StatefulWidget {
   final GoalsRow? goal;
 
   @override
-  _UpdateGoalSharingUsersComponentWidgetState createState() =>
-      _UpdateGoalSharingUsersComponentWidgetState();
+  _AddGoalSharingUsersComponentWidgetState createState() =>
+      _AddGoalSharingUsersComponentWidgetState();
 }
 
-class _UpdateGoalSharingUsersComponentWidgetState
-    extends State<UpdateGoalSharingUsersComponentWidget> {
-  late UpdateGoalSharingUsersComponentModel _model;
+class _AddGoalSharingUsersComponentWidgetState
+    extends State<AddGoalSharingUsersComponentWidget> {
+  late AddGoalSharingUsersComponentModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -35,7 +35,7 @@ class _UpdateGoalSharingUsersComponentWidgetState
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => UpdateGoalSharingUsersComponentModel());
+    _model = createModel(context, () => AddGoalSharingUsersComponentModel());
 
     _model.goalSharingUserEmailController ??= TextEditingController();
     _model.goalSharingUserEmailFocusNode ??= FocusNode();
@@ -68,7 +68,7 @@ class _UpdateGoalSharingUsersComponentWidgetState
         key: _model.formKey,
         autovalidateMode: AutovalidateMode.disabled,
         child: Column(
-          mainAxisSize: MainAxisSize.max,
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
@@ -93,19 +93,16 @@ class _UpdateGoalSharingUsersComponentWidgetState
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Expanded(
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                      child: Text(
-                        'Add User',
-                        style: FlutterFlowTheme.of(context)
-                            .headlineMedium
-                            .override(
-                              fontFamily: 'Poppins',
-                              fontSize: 24.0,
-                            ),
-                      ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                    child: Text(
+                      'Add User',
+                      style:
+                          FlutterFlowTheme.of(context).headlineMedium.override(
+                                fontFamily: 'Poppins',
+                                fontSize: 24.0,
+                              ),
                     ),
                   ),
                 ],
