@@ -52,7 +52,6 @@ class _AddGoalSharingUsersComponentWidgetState
 
     return Container(
       width: double.infinity,
-      height: 330.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: const BorderRadius.only(
@@ -186,7 +185,7 @@ class _AddGoalSharingUsersComponentWidgetState
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 21.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 21.0, 0.0, 21.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,

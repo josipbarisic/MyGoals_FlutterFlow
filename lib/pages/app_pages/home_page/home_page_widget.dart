@@ -3,6 +3,7 @@ import '/backend/supabase/supabase.dart';
 import '/components/bottom_sheets/add_goal_sharing_users_component/add_goal_sharing_users_component_widget.dart';
 import '/components/bottom_sheets/create_goal_component/create_goal_component_widget.dart';
 import '/components/bottom_sheets/update_goal_component/update_goal_component_widget.dart';
+import '/components/dialogs/goal_sharing_users_info_component/goal_sharing_users_info_component_widget.dart';
 import '/components/dropdowns/filter_dropdown/filter_dropdown_widget.dart';
 import '/components/placeholders/empty_list_component/empty_list_component_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -638,38 +639,147 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                               .bodySmall,
                                                         ),
                                                       ),
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    5.0,
-                                                                    0.0),
-                                                        child: FaIcon(
-                                                          FontAwesomeIcons
-                                                              .calendar,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          size: 16.0,
-                                                        ),
-                                                      ),
-                                                      Text(
-                                                        dateTimeFormat(
-                                                            'd/M/y',
-                                                            dateTimeFromSecondsSinceEpoch(
-                                                                valueOrDefault<
-                                                                    int>(
-                                                              listViewGoalsRow
-                                                                  .createdAt
-                                                                  ?.secondsSinceEpoch,
-                                                              0,
-                                                            ))),
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodySmall,
+                                                      Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0),
+                                                                child: FaIcon(
+                                                                  FontAwesomeIcons
+                                                                      .calendar,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  size: 16.0,
+                                                                ),
+                                                              ),
+                                                              Text(
+                                                                dateTimeFormat(
+                                                                    'd/M/y',
+                                                                    dateTimeFromSecondsSinceEpoch(
+                                                                        valueOrDefault<
+                                                                            int>(
+                                                                      listViewGoalsRow
+                                                                          .createdAt
+                                                                          ?.secondsSinceEpoch,
+                                                                      0,
+                                                                    ))),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodySmall,
+                                                              ),
+                                                            ],
+                                                          ),
+                                                          Builder(
+                                                            builder:
+                                                                (context) =>
+                                                                    InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                await showAlignedDialog(
+                                                                  context:
+                                                                      context,
+                                                                  isGlobal:
+                                                                      true,
+                                                                  avoidOverflow:
+                                                                      false,
+                                                                  targetAnchor: const AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0)
+                                                                      .resolve(
+                                                                          Directionality.of(
+                                                                              context)),
+                                                                  followerAnchor: const AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0)
+                                                                      .resolve(
+                                                                          Directionality.of(
+                                                                              context)),
+                                                                  builder:
+                                                                      (dialogContext) {
+                                                                    return Material(
+                                                                      color: Colors
+                                                                          .transparent,
+                                                                      child:
+                                                                          GoalSharingUsersInfoComponentWidget(
+                                                                        goal:
+                                                                            listViewGoalsRow,
+                                                                      ),
+                                                                    );
+                                                                  },
+                                                                ).then((value) =>
+                                                                    setState(
+                                                                        () {}));
+                                                              },
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .min,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .end,
+                                                                children: [
+                                                                  Builder(
+                                                                    builder:
+                                                                        (context) {
+                                                                      if (listViewGoalsRow
+                                                                              .goalSharingUsers.isNotEmpty) {
+                                                                        return Icon(
+                                                                          Icons
+                                                                              .people_outline,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                          size:
+                                                                              24.0,
+                                                                        );
+                                                                      } else {
+                                                                        return Icon(
+                                                                          Icons
+                                                                              .person_outline,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryText,
+                                                                          size:
+                                                                              24.0,
+                                                                        );
+                                                                      }
+                                                                    },
+                                                                  ),
+                                                                  Text(
+                                                                    (listViewGoalsRow.goalSharingUsers.length +
+                                                                            1)
+                                                                        .toString(),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodySmall,
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ],
                                                   ),
@@ -700,13 +810,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                           isScrollControlled:
                                                               true,
                                                           backgroundColor:
-                                                              const Color(0xFFE15759),
-                                                          barrierColor: listViewGoalsRow
-                                                                      .goalSharingUsers.isNotEmpty
-                                                              ? const Color(
-                                                                  0xFF3A7FBF)
-                                                              : const Color(
-                                                                  0x00000000),
+                                                              Colors
+                                                                  .transparent,
                                                           enableDrag: false,
                                                           context: context,
                                                           builder: (context) {
@@ -714,10 +819,13 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                               padding: MediaQuery
                                                                   .viewInsetsOf(
                                                                       context),
-                                                              child:
-                                                                  AddGoalSharingUsersComponentWidget(
-                                                                goal:
-                                                                    listViewGoalsRow,
+                                                              child: SizedBox(
+                                                                height: 370.0,
+                                                                child:
+                                                                    AddGoalSharingUsersComponentWidget(
+                                                                  goal:
+                                                                      listViewGoalsRow,
+                                                                ),
                                                               ),
                                                             );
                                                           },
