@@ -6,17 +6,15 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'update_goal_component_model.dart';
 export 'update_goal_component_model.dart';
 
 class UpdateGoalComponentWidget extends StatefulWidget {
   const UpdateGoalComponentWidget({
-    Key? key,
+    super.key,
     required this.goal,
-  }) : super(key: key);
+  });
 
   final GoalsRow? goal;
 
@@ -64,7 +62,7 @@ class _UpdateGoalComponentWidgetState extends State<UpdateGoalComponentWidget> {
       height: 380.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
@@ -83,7 +81,7 @@ class _UpdateGoalComponentWidgetState extends State<UpdateGoalComponentWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                   child: Container(
                     width: 50.0,
                     height: 4.0,
@@ -96,14 +94,14 @@ class _UpdateGoalComponentWidgetState extends State<UpdateGoalComponentWidget> {
               ],
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'Update Goal',
                         style: FlutterFlowTheme.of(context)
@@ -122,7 +120,7 @@ class _UpdateGoalComponentWidgetState extends State<UpdateGoalComponentWidget> {
                   Switch.adaptive(
                     value: _model.switchValue ??= widget.goal!.archived,
                     onChanged: (newValue) async {
-                      setState(() => _model.switchValue = newValue!);
+                      setState(() => _model.switchValue = newValue);
                     },
                     activeColor: FlutterFlowTheme.of(context).primary,
                     activeTrackColor: FlutterFlowTheme.of(context).accent3,
@@ -132,7 +130,7 @@ class _UpdateGoalComponentWidgetState extends State<UpdateGoalComponentWidget> {
                   Builder(
                     builder: (context) => Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: FlutterFlowIconButton(
                         borderColor: Colors.transparent,
                         borderRadius: 20.0,
@@ -147,9 +145,9 @@ class _UpdateGoalComponentWidgetState extends State<UpdateGoalComponentWidget> {
                             context: context,
                             isGlobal: true,
                             avoidOverflow: false,
-                            targetAnchor: AlignmentDirectional(0.0, 0.0)
+                            targetAnchor: const AlignmentDirectional(0.0, 0.0)
                                 .resolve(Directionality.of(context)),
-                            followerAnchor: AlignmentDirectional(0.0, 0.0)
+                            followerAnchor: const AlignmentDirectional(0.0, 0.0)
                                 .resolve(Directionality.of(context)),
                             builder: (dialogContext) {
                               return Material(
@@ -168,7 +166,7 @@ class _UpdateGoalComponentWidgetState extends State<UpdateGoalComponentWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
               child: TextFormField(
                 controller: _model.goalTitleController,
                 focusNode: _model.goalTitleFocusNode,
@@ -211,7 +209,7 @@ class _UpdateGoalComponentWidgetState extends State<UpdateGoalComponentWidget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   contentPadding:
-                      EdgeInsetsDirectional.fromSTEB(20.0, 32.0, 20.0, 12.0),
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 32.0, 20.0, 12.0),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Poppins',
@@ -225,7 +223,7 @@ class _UpdateGoalComponentWidgetState extends State<UpdateGoalComponentWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
               child: TextFormField(
                 controller: _model.goalDescriptionController,
                 focusNode: _model.goalDescriptionFocusNode,
@@ -268,7 +266,7 @@ class _UpdateGoalComponentWidgetState extends State<UpdateGoalComponentWidget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   contentPadding:
-                      EdgeInsetsDirectional.fromSTEB(20.0, 32.0, 20.0, 12.0),
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 32.0, 20.0, 12.0),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Poppins',
@@ -284,7 +282,7 @@ class _UpdateGoalComponentWidgetState extends State<UpdateGoalComponentWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 21.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 21.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -315,9 +313,9 @@ class _UpdateGoalComponentWidgetState extends State<UpdateGoalComponentWidget> {
                         width: 270.0,
                         height: 50.0,
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -328,7 +326,7 @@ class _UpdateGoalComponentWidgetState extends State<UpdateGoalComponentWidget> {
                                   fontWeight: FontWeight.w500,
                                 ),
                         elevation: 3.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

@@ -2,16 +2,13 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'empty_list_component_model.dart';
 export 'empty_list_component_model.dart';
 
 class EmptyListComponentWidget extends StatefulWidget {
-  const EmptyListComponentWidget({Key? key}) : super(key: key);
+  const EmptyListComponentWidget({super.key});
 
   @override
   _EmptyListComponentWidgetState createState() =>
@@ -37,8 +34,8 @@ class _EmptyListComponentWidgetState extends State<EmptyListComponentWidget>
           curve: Curves.easeInOut,
           delay: 300.ms,
           duration: 300.ms,
-          begin: Offset(2.0, 2.0),
-          end: Offset(1.0, 1.0),
+          begin: const Offset(2.0, 2.0),
+          end: const Offset(1.0, 1.0),
         ),
       ],
     ),

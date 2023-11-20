@@ -1,20 +1,18 @@
+import '/auth/supabase_auth/auth_util.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-
-import '/auth/supabase_auth/auth_util.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'create_account_page_model.dart';
-
 export 'create_account_page_model.dart';
 
 class CreateAccountPageWidget extends StatefulWidget {
-  const CreateAccountPageWidget({Key? key}) : super(key: key);
+  const CreateAccountPageWidget({super.key});
 
   @override
   _CreateAccountPageWidgetState createState() =>
@@ -79,7 +77,8 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(30.0, 30.0, 30.0, 0.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(30.0, 30.0, 30.0, 0.0),
                   child: Lottie.asset(
                     'assets/lottie_animations/Target_Icon.json',
                     width: 150.0,
@@ -89,19 +88,20 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                   child: Text(
                     'My Goals',
                     style: FlutterFlowTheme.of(context).headlineMedium,
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           blurRadius: 4.0,
                           color: Color(0x33000000),
@@ -114,14 +114,14 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                       key: _model.formKey,
                       autovalidateMode: AutovalidateMode.disabled,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             32.0, 32.0, 32.0, 32.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Text(
                                 'Get started',
@@ -134,7 +134,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 16.0),
                               child: Text(
                                 'Let\'s get started by filling out the form bellow.',
@@ -149,7 +149,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: TextFormField(
                                 controller: _model.emailAddressController,
@@ -169,37 +169,39 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).accent3,
+                                      color:
+                                          FlutterFlowTheme.of(context).accent3,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).secondary,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondary,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).alternate,
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).alternate,
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 32.0, 20.0, 12.0),
+                                  contentPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          20.0, 32.0, 20.0, 12.0),
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -211,12 +213,13 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       fontWeight: FontWeight.w500,
                                     ),
                                 textAlign: TextAlign.start,
-                                validator: _model.emailAddressControllerValidator
+                                validator: _model
+                                    .emailAddressControllerValidator
                                     .asValidator(context),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: TextFormField(
                                 controller: _model.passwordController,
@@ -236,37 +239,39 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).accent3,
+                                      color:
+                                          FlutterFlowTheme.of(context).accent3,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).secondary,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondary,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).alternate,
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).alternate,
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 32.0, 20.0, 12.0),
+                                  contentPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          20.0, 32.0, 20.0, 12.0),
                                   suffixIcon: InkWell(
                                     onTap: () => setState(
                                       () => _model.passwordVisibility =
@@ -277,7 +282,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       _model.passwordVisibility
                                           ? Icons.visibility_outlined
                                           : Icons.visibility_off_outlined,
-                                      color: Color(0xFF757575),
+                                      color: const Color(0xFF757575),
                                       size: 22.0,
                                     ),
                                   ),
@@ -297,7 +302,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: TextFormField(
                                 controller: _model.confirmPasswordController,
@@ -317,37 +322,39 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: FlutterFlowTheme.of(context).accent3,
+                                      color:
+                                          FlutterFlowTheme.of(context).accent3,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).secondary,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondary,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).alternate,
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color:
-                                          FlutterFlowTheme.of(context).alternate,
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
                                       width: 2.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 32.0, 20.0, 12.0),
+                                  contentPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          20.0, 32.0, 20.0, 12.0),
                                   suffixIcon: InkWell(
                                     onTap: () => setState(
                                       () => _model.confirmPasswordVisibility =
@@ -358,7 +365,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       _model.confirmPasswordVisibility
                                           ? Icons.visibility_outlined
                                           : Icons.visibility_off_outlined,
-                                      color: Color(0xFF757575),
+                                      color: const Color(0xFF757575),
                                       size: 22.0,
                                     ),
                                   ),
@@ -379,7 +386,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -399,13 +406,14 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  Function() _navigate = () {};
+                                  Function() navigate = () {};
                                   if (_model.formKey.currentState == null ||
-                                      !_model.formKey.currentState!.validate()) {
+                                      !_model.formKey.currentState!
+                                          .validate()) {
                                     return;
                                   }
                                   if (_model.passwordController.text ==
@@ -416,8 +424,9 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                     GoRouter.of(context).prepareAuthEvent();
                                     if (_model.passwordController.text !=
                                         _model.confirmPasswordController.text) {
-                                      ScaffoldMessenger.of(context).showSnackBar(
-                                        SnackBar(
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        const SnackBar(
                                           content: Text(
                                             'Passwords don\'t match!',
                                           ),
@@ -426,8 +435,8 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       return;
                                     }
 
-                                    final user =
-                                        await authManager.createAccountWithEmail(
+                                    final user = await authManager
+                                        .createAccountWithEmail(
                                       context,
                                       _model.emailAddressController.text,
                                       _model.passwordController.text,
@@ -436,7 +445,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       return;
                                     }
 
-                                    _navigate = () => context.goNamedAuth(
+                                    navigate = () => context.goNamedAuth(
                                         'HomePage', context.mounted);
                                   } else {
                                     setState(() {
@@ -444,15 +453,15 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                     });
                                   }
 
-                                  _navigate();
+                                  navigate();
                                 },
                                 text: 'Create Account',
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 50.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -465,7 +474,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         fontWeight: FontWeight.w500,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -474,7 +483,7 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 16.0, 0.0, 0.0),
                               child: RichText(
                                 textScaleFactor:
@@ -493,8 +502,8 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       text: 'Login here.',
                                       style: GoogleFonts.getFont(
                                         'Poppins',
-                                        color:
-                                            FlutterFlowTheme.of(context).primary,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                         fontWeight: FontWeight.w600,
                                       ),
                                       mouseCursor: SystemMouseCursors.click,

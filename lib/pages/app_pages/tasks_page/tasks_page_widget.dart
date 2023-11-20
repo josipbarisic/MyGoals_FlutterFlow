@@ -1,12 +1,3 @@
-import 'dart:async';
-
-import 'package:aligned_dialog/aligned_dialog.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
-
 import '/backend/supabase/supabase.dart';
 import '/components/bottom_sheets/create_task_component/create_task_component_widget.dart';
 import '/components/bottom_sheets/update_task_component/update_task_component_widget.dart';
@@ -16,16 +7,22 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:async';
+import 'package:aligned_dialog/aligned_dialog.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'tasks_page_model.dart';
-
 export 'tasks_page_model.dart';
 
 class TasksPageWidget extends StatefulWidget {
   const TasksPageWidget({
-    Key? key,
+    super.key,
     required this.goalId,
     this.selectedTaskId,
-  }) : super(key: key);
+  });
 
   final int? goalId;
   final int? selectedTaskId;
@@ -48,8 +45,8 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: Offset(0.0, 0.0),
-          end: Offset(0.0, 5.0),
+          begin: const Offset(0.0, 0.0),
+          end: const Offset(0.0, 5.0),
         ),
       ],
     ),
@@ -102,8 +99,8 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                       : FocusScope.of(context).unfocus(),
                   child: Padding(
                     padding: MediaQuery.viewInsetsOf(context),
-                    child: Container(
-                      height: 370.0,
+                    child: SizedBox(
+                      height: 360.0,
                       child: CreateTaskComponentWidget(
                         goalId: widget.goalId!,
                       ),
@@ -111,9 +108,8 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                   ),
                 );
               },
-              //
             ).then((value) => safeSetState(() {}));
-            //
+
             setState(() => _model.requestCompleter = null);
             await _model.waitForRequestCompleted();
           },
@@ -134,7 +130,7 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 5.0),
                     child: FlutterFlowIconButton(
                       borderColor: Colors.transparent,
                       borderRadius: 20.0,
@@ -149,7 +145,7 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                         context.goNamed(
                           'HomePage',
                           extra: <String, dynamic>{
-                            kTransitionInfoKey: TransitionInfo(
+                            kTransitionInfoKey: const TransitionInfo(
                               hasTransition: true,
                               transitionType: PageTransitionType.leftToRight,
                               duration: Duration(milliseconds: 200),
@@ -162,7 +158,7 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                   Expanded(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                       child: Text(
                         'Goal Tasks',
                         style: FlutterFlowTheme.of(context)
@@ -177,7 +173,7 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                 ],
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -210,9 +206,9 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                         }
                         List<TasksRow> listViewTasksRowList = snapshot.data!;
                         if (listViewTasksRowList.isEmpty) {
-                          return Container(
+                          return SizedBox(
                             height: MediaQuery.sizeOf(context).height * 0.8,
-                            child: EmptyListComponentWidget(),
+                            child: const EmptyListComponentWidget(),
                           );
                         }
                         return ListView.builder(
@@ -224,7 +220,7 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                             final listViewTasksRow =
                                 listViewTasksRowList[listViewIndex];
                             return Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 20.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -239,8 +235,7 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                                     context: context,
                                     builder: (context) {
                                       return GestureDetector(
-                                        onTap: () =>
-                                        _model
+                                        onTap: () => _model
                                                 .unfocusNode.canRequestFocus
                                             ? FocusScope.of(context)
                                                 .requestFocus(
@@ -249,8 +244,8 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                                         child: Padding(
                                           padding:
                                               MediaQuery.viewInsetsOf(context),
-                                          child: Container(
-                                            height: 370,
+                                          child: SizedBox(
+                                            height: 360.0,
                                             child: UpdateTaskComponentWidget(
                                               task: listViewTasksRow,
                                             ),
@@ -269,7 +264,7 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x33000000),
@@ -279,7 +274,7 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                                     borderRadius: BorderRadius.circular(16.0),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 5.0, 10.0, 5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -296,7 +291,7 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -369,7 +364,7 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -448,13 +443,13 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                                                 isGlobal: true,
                                                 avoidOverflow: false,
                                                 targetAnchor:
-                                                    AlignmentDirectional(
+                                                    const AlignmentDirectional(
                                                             0.0, 0.0)
                                                         .resolve(
                                                             Directionality.of(
                                                                 context)),
                                                 followerAnchor:
-                                                    AlignmentDirectional(
+                                                    const AlignmentDirectional(
                                                             0.0, 0.0)
                                                         .resolve(
                                                             Directionality.of(

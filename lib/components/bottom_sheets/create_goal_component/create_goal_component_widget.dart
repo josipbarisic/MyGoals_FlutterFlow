@@ -4,14 +4,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'create_goal_component_model.dart';
 export 'create_goal_component_model.dart';
 
 class CreateGoalComponentWidget extends StatefulWidget {
-  const CreateGoalComponentWidget({Key? key}) : super(key: key);
+  const CreateGoalComponentWidget({super.key});
 
   @override
   _CreateGoalComponentWidgetState createState() =>
@@ -55,7 +53,7 @@ class _CreateGoalComponentWidgetState extends State<CreateGoalComponentWidget> {
       height: 380.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
@@ -74,7 +72,7 @@ class _CreateGoalComponentWidgetState extends State<CreateGoalComponentWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                   child: Container(
                     width: 50.0,
                     height: 4.0,
@@ -87,7 +85,7 @@ class _CreateGoalComponentWidgetState extends State<CreateGoalComponentWidget> {
               ],
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
               child: Text(
                 'Create Goal',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -97,7 +95,7 @@ class _CreateGoalComponentWidgetState extends State<CreateGoalComponentWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
               child: TextFormField(
                 controller: _model.goalTitleController,
                 focusNode: _model.goalTitleFocusNode,
@@ -140,7 +138,7 @@ class _CreateGoalComponentWidgetState extends State<CreateGoalComponentWidget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   contentPadding:
-                      EdgeInsetsDirectional.fromSTEB(20.0, 32.0, 20.0, 12.0),
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 32.0, 20.0, 12.0),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Poppins',
@@ -154,7 +152,7 @@ class _CreateGoalComponentWidgetState extends State<CreateGoalComponentWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
               child: TextFormField(
                 controller: _model.goalDescriptionController,
                 focusNode: _model.goalDescriptionFocusNode,
@@ -197,7 +195,7 @@ class _CreateGoalComponentWidgetState extends State<CreateGoalComponentWidget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   contentPadding:
-                      EdgeInsetsDirectional.fromSTEB(20.0, 32.0, 20.0, 12.0),
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 32.0, 20.0, 12.0),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Poppins',
@@ -213,7 +211,7 @@ class _CreateGoalComponentWidgetState extends State<CreateGoalComponentWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 21.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 21.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -240,9 +238,9 @@ class _CreateGoalComponentWidgetState extends State<CreateGoalComponentWidget> {
                         width: 270.0,
                         height: 50.0,
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -253,7 +251,7 @@ class _CreateGoalComponentWidgetState extends State<CreateGoalComponentWidget> {
                                   fontWeight: FontWeight.w500,
                                 ),
                         elevation: 3.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

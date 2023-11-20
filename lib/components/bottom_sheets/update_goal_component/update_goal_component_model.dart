@@ -1,15 +1,6 @@
-import '/backend/supabase/supabase.dart';
-import '/components/dialogs/delete_goal_component/delete_goal_component_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'update_goal_component_widget.dart' show UpdateGoalComponentWidget;
-import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class UpdateGoalComponentModel
     extends FlutterFlowModel<UpdateGoalComponentWidget> {
@@ -45,11 +36,13 @@ class UpdateGoalComponentModel
 
   /// Initialization and disposal methods.
 
+  @override
   void initState(BuildContext context) {
     goalTitleControllerValidator = _goalTitleControllerValidator;
     goalDescriptionControllerValidator = _goalDescriptionControllerValidator;
   }
 
+  @override
   void dispose() {
     goalTitleFocusNode?.dispose();
     goalTitleController?.dispose();

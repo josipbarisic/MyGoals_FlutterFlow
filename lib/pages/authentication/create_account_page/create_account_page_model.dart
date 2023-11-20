@@ -1,14 +1,6 @@
-import '/auth/supabase_auth/auth_util.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'create_account_page_widget.dart' show CreateAccountPageWidget;
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
 
 class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
   ///  Local state fields for this page.
@@ -71,6 +63,7 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
 
   /// Initialization and disposal methods.
 
+  @override
   void initState(BuildContext context) {
     emailAddressControllerValidator = _emailAddressControllerValidator;
     passwordVisibility = false;
@@ -79,6 +72,7 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
     confirmPasswordControllerValidator = _confirmPasswordControllerValidator;
   }
 
+  @override
   void dispose() {
     unfocusNode.dispose();
     emailAddressFocusNode?.dispose();

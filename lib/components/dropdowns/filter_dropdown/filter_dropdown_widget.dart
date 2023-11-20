@@ -1,19 +1,15 @@
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'filter_dropdown_model.dart';
 export 'filter_dropdown_model.dart';
 
 class FilterDropdownWidget extends StatefulWidget {
-  const FilterDropdownWidget({Key? key}) : super(key: key);
+  const FilterDropdownWidget({super.key});
 
   @override
   _FilterDropdownWidgetState createState() => _FilterDropdownWidgetState();
@@ -31,8 +27,8 @@ class _FilterDropdownWidgetState extends State<FilterDropdownWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: Offset(0.0, -20.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, -20.0),
+          end: const Offset(0.0, 0.0),
         ),
         FadeEffect(
           curve: Curves.easeInOut,
@@ -69,13 +65,13 @@ class _FilterDropdownWidgetState extends State<FilterDropdownWidget>
     context.watch<FFAppState>();
 
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
       child: Container(
         width: 300.0,
         height: 155.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 4.0,
               color: Color(0x33000000),
@@ -85,7 +81,7 @@ class _FilterDropdownWidgetState extends State<FilterDropdownWidget>
           borderRadius: BorderRadius.circular(16.0),
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 5.0, 16.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 5.0, 16.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -114,7 +110,7 @@ class _FilterDropdownWidgetState extends State<FilterDropdownWidget>
                 ],
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [

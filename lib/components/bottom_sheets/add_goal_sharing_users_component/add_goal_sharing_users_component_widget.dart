@@ -3,17 +3,15 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'add_goal_sharing_users_component_model.dart';
 export 'add_goal_sharing_users_component_model.dart';
 
 class AddGoalSharingUsersComponentWidget extends StatefulWidget {
   const AddGoalSharingUsersComponentWidget({
-    Key? key,
+    super.key,
     required this.goal,
-  }) : super(key: key);
+  });
 
   final GoalsRow? goal;
 
@@ -54,10 +52,10 @@ class _AddGoalSharingUsersComponentWidgetState
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.only(bottom: 30),
+      height: 330.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(0.0),
           bottomRight: Radius.circular(0.0),
           topLeft: Radius.circular(16.0),
@@ -76,7 +74,7 @@ class _AddGoalSharingUsersComponentWidgetState
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                   child: Container(
                     width: 50.0,
                     height: 4.0,
@@ -89,13 +87,13 @@ class _AddGoalSharingUsersComponentWidgetState
               ],
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Add User',
                       style:
@@ -109,13 +107,13 @@ class _AddGoalSharingUsersComponentWidgetState
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           16.0, 16.0, 16.0, 16.0),
                       child: Text(
                         'Add a user who shares the same goal and \n will contribute to it\'s completion.',
@@ -131,7 +129,7 @@ class _AddGoalSharingUsersComponentWidgetState
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
               child: TextFormField(
                 controller: _model.goalSharingUserEmailController,
                 focusNode: _model.goalSharingUserEmailFocusNode,
@@ -174,7 +172,7 @@ class _AddGoalSharingUsersComponentWidgetState
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   contentPadding:
-                      EdgeInsetsDirectional.fromSTEB(20.0, 32.0, 20.0, 12.0),
+                      const EdgeInsetsDirectional.fromSTEB(20.0, 32.0, 20.0, 12.0),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Poppins',
@@ -182,14 +180,13 @@ class _AddGoalSharingUsersComponentWidgetState
                       fontSize: 14.0,
                       fontWeight: FontWeight.w500,
                     ),
-                keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.start,
                 validator: _model.goalSharingUserEmailControllerValidator
                     .asValidator(context),
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 21.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 21.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -211,7 +208,7 @@ class _AddGoalSharingUsersComponentWidgetState
                                       return existingUsers;
                                     }()
                                   : [newUserEmail];
-                            }(widget.goal?.goalSharingUsers?.toList(),
+                            }(widget.goal?.goalSharingUsers.toList(),
                                 _model.goalSharingUserEmailController.text),
                           },
                           matchingRows: (rows) => rows.eq(
@@ -226,9 +223,9 @@ class _AddGoalSharingUsersComponentWidgetState
                         width: 270.0,
                         height: 50.0,
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -239,7 +236,7 @@ class _AddGoalSharingUsersComponentWidgetState
                                   fontWeight: FontWeight.w500,
                                 ),
                         elevation: 3.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

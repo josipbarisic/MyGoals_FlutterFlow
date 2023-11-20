@@ -3,17 +3,15 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'delete_task_component_model.dart';
 export 'delete_task_component_model.dart';
 
 class DeleteTaskComponentWidget extends StatefulWidget {
   const DeleteTaskComponentWidget({
-    Key? key,
+    super.key,
     required this.task,
-  }) : super(key: key);
+  });
 
   final TasksRow? task;
 
@@ -49,11 +47,11 @@ class _DeleteTaskComponentWidgetState extends State<DeleteTaskComponentWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
       child: Container(
         width: double.infinity,
         height: 200.0,
-        constraints: BoxConstraints(
+        constraints: const BoxConstraints(
           maxWidth: 500.0,
         ),
         decoration: BoxDecoration(
@@ -65,7 +63,7 @@ class _DeleteTaskComponentWidgetState extends State<DeleteTaskComponentWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
               child: Text(
                 'Delete Task',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -80,10 +78,10 @@ class _DeleteTaskComponentWidgetState extends State<DeleteTaskComponentWidget> {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           16.0, 16.0, 16.0, 16.0),
                       child: Text(
-                        'Are you sure you want to delete the \"${widget.task?.title}\" task?',
+                        'Are you sure you want to delete the "${widget.task?.title}" task?',
                         style: FlutterFlowTheme.of(context).bodyMedium,
                       ),
                     ),
@@ -92,7 +90,7 @@ class _DeleteTaskComponentWidgetState extends State<DeleteTaskComponentWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -100,7 +98,7 @@ class _DeleteTaskComponentWidgetState extends State<DeleteTaskComponentWidget> {
                   Flexible(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           await TasksTable().delete(
@@ -115,9 +113,9 @@ class _DeleteTaskComponentWidgetState extends State<DeleteTaskComponentWidget> {
                         options: FFButtonOptions(
                           width: 270.0,
                           height: 50.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).error,
                           textStyle:
@@ -129,7 +127,7 @@ class _DeleteTaskComponentWidgetState extends State<DeleteTaskComponentWidget> {
                                     fontWeight: FontWeight.w500,
                                   ),
                           elevation: 3.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -141,7 +139,7 @@ class _DeleteTaskComponentWidgetState extends State<DeleteTaskComponentWidget> {
                   Flexible(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           Navigator.pop(context);
@@ -150,9 +148,9 @@ class _DeleteTaskComponentWidgetState extends State<DeleteTaskComponentWidget> {
                         options: FFButtonOptions(
                           width: 270.0,
                           height: 50.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -164,7 +162,7 @@ class _DeleteTaskComponentWidgetState extends State<DeleteTaskComponentWidget> {
                                     fontWeight: FontWeight.w500,
                                   ),
                           elevation: 3.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),

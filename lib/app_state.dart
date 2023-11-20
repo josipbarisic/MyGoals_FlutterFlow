@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '/backend/schema/structs/index.dart';
-import 'backend/supabase/supabase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -40,11 +39,11 @@ class FFAppState extends ChangeNotifier {
   late SharedPreferences prefs;
 
   FiltersStruct _filters =
-      FiltersStruct.fromSerializableMap(jsonDecode('{\"archived\":\"false\"}'));
+      FiltersStruct.fromSerializableMap(jsonDecode('{"archived":"false"}'));
   FiltersStruct get filters => _filters;
-  set filters(FiltersStruct _value) {
-    _filters = _value;
-    prefs.setString('ff_filters', _value.serialize());
+  set filters(FiltersStruct value) {
+    _filters = value;
+    prefs.setString('ff_filters', value.serialize());
   }
 
   void updateFiltersStruct(Function(FiltersStruct) updateFn) {

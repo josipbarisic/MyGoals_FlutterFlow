@@ -3,17 +3,15 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'delete_goal_component_model.dart';
 export 'delete_goal_component_model.dart';
 
 class DeleteGoalComponentWidget extends StatefulWidget {
   const DeleteGoalComponentWidget({
-    Key? key,
+    super.key,
     required this.goal,
-  }) : super(key: key);
+  });
 
   final GoalsRow? goal;
 
@@ -49,11 +47,11 @@ class _DeleteGoalComponentWidgetState extends State<DeleteGoalComponentWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
       child: Container(
         width: double.infinity,
         height: 200.0,
-        constraints: BoxConstraints(
+        constraints: const BoxConstraints(
           maxWidth: 500.0,
         ),
         decoration: BoxDecoration(
@@ -65,7 +63,7 @@ class _DeleteGoalComponentWidgetState extends State<DeleteGoalComponentWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
               child: Text(
                 'Delete Goal',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -80,10 +78,10 @@ class _DeleteGoalComponentWidgetState extends State<DeleteGoalComponentWidget> {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           16.0, 16.0, 16.0, 16.0),
                       child: Text(
-                        'Are you sure you want to delete the \"${widget.goal?.title}\" goal?',
+                        'Are you sure you want to delete the "${widget.goal?.title}" goal?',
                         style: FlutterFlowTheme.of(context).bodyMedium,
                       ),
                     ),
@@ -92,7 +90,7 @@ class _DeleteGoalComponentWidgetState extends State<DeleteGoalComponentWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -100,7 +98,7 @@ class _DeleteGoalComponentWidgetState extends State<DeleteGoalComponentWidget> {
                   Flexible(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           await GoalsTable().delete(
@@ -116,9 +114,9 @@ class _DeleteGoalComponentWidgetState extends State<DeleteGoalComponentWidget> {
                         options: FFButtonOptions(
                           width: 270.0,
                           height: 50.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).error,
                           textStyle:
@@ -130,7 +128,7 @@ class _DeleteGoalComponentWidgetState extends State<DeleteGoalComponentWidget> {
                                     fontWeight: FontWeight.w500,
                                   ),
                           elevation: 3.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -142,7 +140,7 @@ class _DeleteGoalComponentWidgetState extends State<DeleteGoalComponentWidget> {
                   Flexible(
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           Navigator.pop(context);
@@ -151,9 +149,9 @@ class _DeleteGoalComponentWidgetState extends State<DeleteGoalComponentWidget> {
                         options: FFButtonOptions(
                           width: 270.0,
                           height: 50.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -165,7 +163,7 @@ class _DeleteGoalComponentWidgetState extends State<DeleteGoalComponentWidget> {
                                     fontWeight: FontWeight.w500,
                                   ),
                           elevation: 3.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
