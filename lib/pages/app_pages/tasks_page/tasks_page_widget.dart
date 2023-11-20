@@ -111,6 +111,7 @@ class _TasksPageWidgetState extends State<TasksPageWidget>
                   ),
                 );
               },
+              //
             ).then((value) => safeSetState(() {}));
             //
             setState(() => _model.requestCompleter = null);
